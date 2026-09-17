@@ -5,9 +5,16 @@
     $Adicao = $n1 + $n2;
     $Subtracao = $n1 > $n2 ? $n1 - $n2 : $n2 - $n1;
     $Multiplicacao = $n1 * $n2;
-    $Divisao = $n1 / $n2;
+    $Divisao;
+    $Modulo;
     $Potenciacao = $n1 ** $n2;
     $Concatenacao = $n1.$n2;
+
+    if (($n2 != 0) == true)
+    {
+        $Divisao = $n1 / $n2;
+        $Modulo = $n1 % $n2;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +35,9 @@
         <br>
         <li><?php echo"$n1 x $n2 = $Multiplicacao";?></li>
         <br>
-        <li><?php echo"$n1 ÷ $n2 = $Divisao";?></li>
+        <li><?php echo $n2 != 0 ? "$n1 ÷ $n2 = $Divisao" : "<p>Não é possível dividir por 0, palhaço</p>"; ?></li>
+        <br>
+        <li><?php echo $n2 != 0 ? "$n1 % $n2 = $Modulo" : "<p>Não é possível dividir por 0, palhaço</p>"; ?></li>
         <br>
         <li><?php echo"$n1 <sup>$n2</sup> = $Potenciacao";?></li>
         <br>
