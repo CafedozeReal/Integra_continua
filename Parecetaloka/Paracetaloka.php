@@ -25,6 +25,8 @@
     $Valor_final_card = $Total * ($Desconto_Card/100);
     $Valor_Final = $Total - $Valor_final_card - $Valor_final_idade;
 
+    $Count = 2;
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +46,7 @@
             min-height: 100vh;
             padding: 35px 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             font-family: "Courier New", Courier, monospace;
@@ -169,56 +172,89 @@
         .voltar:hover {
             background: #116b39;
         }
+
+        .interface
+        {
+            display: flex;
+            width: 100vw;
+            justify-content: space-around;
+        }
     </style>
 </head>
 
 <body>
-    <div class="nota">
-        <header class="cabecalho">
-            <div class="logo">✚</div>
-            <h1>Farmácia Paracetaloka</h1>
-            <p>Saúde, cuidado e confiança</p>
-        </header>
+    <div class="interface">
+        <div class="nota">
+            <header class="cabecalho">
+                <div class="logo">✚</div>
+                <h1>Farmácia Paracetaloka</h1>
+                <p>Saúde, cuidado e confiança</p>
+            </header>
 
-        <div class="tipo">
-            COMPROVANTE DE VENDA
+            <div class="tipo">
+                COMPROVANTE DE VENDA
+            </div>
+
+            <section class="dados">
+                <div class="linha">
+                    <span>Cliente:</span>
+                    <strong><?php echo $Nome; ?></strong>
+                </div>
+
+                <div class="linha">
+                    <span>Total do pedido:</span>
+                    <span>R$ <?php echo number_format($Total, 2, ',', '.'); ?></span>
+                </div>
+            </section>
+
+            <section class="descontos">
+                <div class="linha">
+                    <span>Desconto faixa etária:</span>
+                    <span>- R$ <?php echo number_format($Valor_final_idade, 2, ',', '.'); ?></span>
+                </div>
+
+                <div class="linha">
+                    <span>Desconto fidelidade:</span>
+                    <span>- R$ <?php echo number_format($Valor_final_card, 2, ',', '.'); ?></span>
+                </div>
+            </section>
+
+            <div class="total">
+                <span>TOTAL A PAGAR</span>
+                <span class="valor">R$ <?php echo number_format($Valor_Final, 2, ',', '.'); ?></span>
+            </div>
+
+            <div class="rodape">
+                Obrigado pela preferência!<br>
+                Este documento é um comprovante de venda da Farmácia Paracetaloka.
+            </div>
+
+            <a class="voltar" href="indexe.html">← Voltar ao atendimento</a>
         </div>
 
-        <section class="dados">
-            <div class="linha">
-                <span>Cliente:</span>
-                <strong><?php echo $Nome; ?></strong>
-            </div>
+        <div class="parcela">
+            <h1>Parcelamentos Disponíveis</h1>
 
-            <div class="linha">
-                <span>Total do pedido:</span>
-                <span>R$ <?php echo number_format($Total, 2, ',', '.'); ?></span>
-            </div>
-        </section>
+            <?php
+                echo"<section><div>À Vista</div><div>Parcela: $Valor_Final</div></section>";
+                echo"<hr>";
+                /*
+                while ($Count <= 6)
+                {
+                    $Valor_Parcelado = $Valor_Final/$Count;
+                    echo"<section><div>$Count X Sem Juros</div><div>Parcela: $Valor_Parcelado</div></section>";
+                    echo"<hr>";
+                    $Count += 1;
+                } */
 
-        <section class="descontos">
-            <div class="linha">
-                <span>Desconto faixa etária:</span>
-                <span>- R$ <?php echo number_format($Valor_final_idade, 2, ',', '.'); ?></span>
-            </div>
-
-            <div class="linha">
-                <span>Desconto fidelidade:</span>
-                <span>- R$ <?php echo number_format($Valor_final_card, 2, ',', '.'); ?></span>
-            </div>
-        </section>
-
-        <div class="total">
-            <span>TOTAL A PAGAR</span>
-            <span class="valor">R$ <?php echo number_format($Valor_Final, 2, ',', '.'); ?></span>
+                for ($i = 2; $i <= 6; $i++)
+                {
+                    $Valor_Parcelado = $Valor_Final/$i;
+                    echo"<section><div>$i X Sem Juros</div><div>Parcela: $Valor_Parcelado</div></section>";
+                    echo"<hr>";
+                }
+            ?>
         </div>
-
-        <div class="rodape">
-            Obrigado pela preferência!<br>
-            Este documento é um comprovante de venda da Farmácia Paracetaloka.
-        </div>
-
-        <a class="voltar" href="indexe.html">← Voltar ao atendimento</a>
     </div>
 </body>
 </html>
