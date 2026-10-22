@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento</title>
+</head>
+<body>
+    <form action="calc.php" method="post">
+        <p>
+            <label for="horas">Horas</label>
+            <input type="number" name="horas" id="horas">
+        </p>
+        <hr>
+        <p>
+            <label for="veivculos">Veículo</label>
+            <input type="radio" name="veiculo" id="v1">
+            <br>
+            <input type="radio" name="veiculo" id="v2">
+        </p>
+        <hr>
+        <p>
+            <label for="lavagem">Lavagem</label>
+            <input type="checkbox" name="lavagem" id="lavagem">
+        </p>
+        <hr>
+        <p>
+            <input type="submit" value="Calcular Preço">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
