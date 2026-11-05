@@ -4,13 +4,13 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "";
-    $db = "empresa-crud"
+    $db = "empresa_crud";
 
-    $result = mysqli_connect($servidor, $usuario, $senha, $db);
-    if ($result)
+    $conexao = mysqli_connect($servidor, $usuario, $senha, $db);
+    if ($conexao)
     {
         echo "Conexão realizada com sucesso";
     } else {
-        echo mysqli_error($result);
+        echo mysqli_error($conexao);
     }
 ?>

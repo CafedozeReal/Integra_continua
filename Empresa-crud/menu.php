@@ -3,27 +3,22 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Empresa</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
+        <a class="nav-link" href="/Integra_continua/Empresa-crud/index.php">Início</a>
+      </li>      
+      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Funcionários
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">    
-          <a class="dropdown-item" href="#">Adicionar</a>
-          <a class="dropdown-item" href="#">Listar</a>
+          <a class="dropdown-item" href="/Integra_continua/Empresa-crud/funcionarios/adicionar.php">Adicionar</a>
+          <a class="dropdown-item" href="/Integra_continua/Empresa-crud/funcionarios/Listar.php">Listar</a>
         </div>
       </li>
     </ul>

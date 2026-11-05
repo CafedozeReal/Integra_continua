@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Industria</title>
 </head>
 <body>
+    <?php
+        include("menu.php");
+    ?>
     <div class="container">
         <h1 align="center">BEM VINDO A EMPRESA</h1>
         <hr>
-        <h3>Escolha a operação no menu superior</h3>
+        <h3 align="center">Escolha a operação no menu superior</h3>
     </div>
 </body>
 </html>
