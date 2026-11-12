@@ -36,7 +36,51 @@
                     <td><?php echo $Linha['salario']; ?></td>
                     <td>
                         <a href="editar.php?id=<?php echo $Linha['id']; ?>" class="btn btn-warning">Editar</a>
-                        <button class="btn btn-danger">Remover</button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalremover<?php echo $Linha['id']; ?>">
+                            Remover
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade"
+                            id="modalremover<?php echo $Linha['id']; ?>"
+                            tabindex="-1"
+                            aria-hidden="true">
+
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Remover Funcionário</h5>
+
+                                        <button type="button" class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        Confirma a exclusão do registro?
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">
+                                            Cancelar
+                                        </button>
+
+                                        <a href="remover.php?id=<?php echo $Linha['id']; ?>"
+                                            class="btn btn-danger">
+                                            Excluir
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             
